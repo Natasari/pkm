@@ -1,6 +1,7 @@
 package com.example.penisriwahyu.pointerb;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,11 +11,28 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 
 public class front extends ActionBarActivity {
     private EditText email;
     private EditText password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,28 +42,41 @@ public class front extends ActionBarActivity {
         password = (EditText) findViewById(R.id.etPass);
 
         Button but = (Button) this.findViewById(R.id.btnSingIn);
-        but.setOnClickListener(new View.OnClickListener(){
+        but.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 String Email = email.getText().toString();
                 String Password = password.getText().toString();
 
-                if(Email.matches("") || Password.matches("")){
+                if (Email.matches("") || Password.matches("")) {
                     TextView textV = (TextView) findViewById(R.id.salah);
                     textV.setText("wrong email or password");
                 }
+                String status = new String();
+                try {
+                    LoginOperator task = new LoginOperator(front.this, Email, Password);
+                    status = task.execute().get();
+                    Log.d("BROOOOOOOOOOOOOOOO", status);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
 
-                    String myEmail = "penitasari93@gmail.com";
-                    String myPassword = "peni";
+                if (status.equals("TRUE")){
 
-                    Log.d("PENI", myEmail + " | " + Email);
-
-                    if(Email.compareTo("penitasari93@gmail.com") == 0){
-                        Log.d("PENI", "MATCHES");
-                    }
-                    else{
-                        Log.d("PENI", "NOT");
-                    }
+                    //TARUH INTENTNYA DISINI
+                }
+//                String myEmail = "penitasari93@gmail.com";
+//                String myPassword = "peni";
+//
+//                Log.d("PENI", myEmail + " | " + Email);
+                //sendPostRequest(Email, Password);
+//                if (Email.compareTo("penitasari93@gmail.com") == 0) {
+//                    Log.d("PENI", "MATCHES");
+//                } else {
+//                    Log.d("PENI", "NOT");
+//                }
 
 
                 /*Intent intent = new Intent(front.this, login.class);
@@ -61,7 +92,6 @@ public class front extends ActionBarActivity {
         });
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -85,3 +115,5 @@ public class front extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
+
