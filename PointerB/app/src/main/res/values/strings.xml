@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IndoHealth</string>
+    <string name="title_activity_main">IndoHealth</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="next">Next</string>
+    <string name="title_activity_sub">Profile</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="title_activity_my_layout">MyLayout</string>
+    <string name="title_activity_my_view">MyView</string>
+    <string name="title_activity_sub_activity2">SD</string>
+    <string name="title_activity_sub_activity_smp">SMP</string>
+    <string name="title_activity_sub_activity_sm">SMA</string>
+    <string name="title_activity_dynamic_matkul">DynamicMatkul</string>
+    <string name="title_activity_sd_slide">sdSlide</string>
+
+    <string-array name="tabsSD">
+        <item>SD 1</item>
+        <item>SD 2</item>
+        <item>SD 3</item>
+        <item>SD 4</item>
+        <item>SD 5</item>
+        <item>SD 6</item>
+    </string-array>
+    <string-array name="tabsSMP">
+        <item>SMP 1</item>
+        <item>SMP 2</item>
+        <item>SMP 3</item>
+    </string-array>
+    <string-array name="tabsSMA">
+        <item>SMA 1</item>
+        <item>SMA 2</item>
+        <item>SMA 3</item>
+    </string-array>
+
+    <string name="title_activity_sub_bab_view">subBabView</string>
+    <string name="title_activity_materi_viewer">materiViewer</string>
+    <string name="title_activity_smp_slide">smpSlide</string>
+    <string name="title_activity_sma_slide">smaSlide</string>
+
+    <item name="key_1" type="id"/>
+    <item name="key_2" type="id"/>
+
+    <string name="title_activity_front">front</string>
+    <string name="title_activity_login">login</string>
+
+</resources>

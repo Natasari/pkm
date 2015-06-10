@@ -1,0 +1,38 @@
+<org.lucasr.dspec.DesignSpecFrameLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303030"
+
+    tools:context="com.example.penisriwahyu.pointerb.NavigationDrawerFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:id="@+id/containerDrawerImage"
+        android:layout_width="match_parent"
+        android:background="#000"
+        android:layout_height="wrap_content">
+       <ImageView
+           android:layout_marginTop="@dimen/drawer_margin_top"
+           android:layout_width="283dp"
+           android:layout_height="130dp"
+           android:src="@drawable/ic_abstract"
+           />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/containerDrawerImage"
+        android:id="@+id/drawerList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>
+</org.lucasr.dspec.DesignSpecFrameLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootRL"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/ic_background">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:padding="10dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="20dp"
+            android:background="@drawable/ic_indohealth"
+            android:id="@+id/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp" />
+
+        <TextView
+            android:id="@+id/salah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="#D50000"
+            android:typeface="normal"
+            android:fontFamily="arial"
+            android:gravity="center"
+            />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="10dp"
+            android:hint="Email"
+            android:textColor="@color/black"
+            android:textColorHint="#cccccc"
+            android:drawableLeft="@drawable/ic_email"
+            android:typeface="normal"
+            android:fontFamily="arial"
+            android:drawablePadding="10dp"/>
+        <EditText
+            android:id="@+id/etPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:drawablePadding="10dp"
+            android:hint="Password"
+            android:textColorHint="#cccccc"
+            android:password="true"
+            android:textColor="@color/black"
+            android:drawableLeft="@drawable/ic_password"
+            android:typeface="normal"
+            android:fontFamily="arial"
+            />
+        <Button
+            android:id="@+id/btnSingIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="4dp"
+            android:text="Sign In"
+            android:background="@drawable/btn_state"
+
+            />
+    </LinearLayout>
+
+</RelativeLayout>
